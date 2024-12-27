@@ -1,4 +1,6 @@
 dataset/extracted_train_set/*
-dataset/extracted_test_set/*
 !dataset/extracted_train_set/.gitkeep
+dataset/extracted_test_set/*
 !dataset/extracted_test_set/.gitkeep
+dataset/separated_train_set/*
+!dataset/separated_train_set/.gitkeep
