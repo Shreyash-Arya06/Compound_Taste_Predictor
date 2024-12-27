@@ -1,4 +1,4 @@
- Name,Taste,Reference,SMILES,Canonical SMILES,In Bitter Domain,Sweet,Energygap,Label
+Name,Taste,Reference,SMILES,Canonical SMILES,In Bitter Domain,Sweet,Energygap,Label
 Alitame,Sweet,Rojas et al. (2017),CC(COCNC1C(C)(C)SC1(C)C)NCOCC(CC(=O)O)N,CC(COCNC1C(C)(C)SC1(C)C)NCOCC(CC(=O)O)N,,True,209,1
 Maltitol,Sweet,Rojas et al. (2017),OCC(C(C(C(CO)O)O)OC1OC(CO)C(C(C1O)O)O)O,OCC(C(C(C(CO)O)O)OC1OC(CO)C(C(C1O)O)O)O,,True,153,1
 Isomalt (Palatinit) / Isomaltitol,Sweet,Rojas et al. (2017),OCC(C(C(C(COC1OC(CO)C(C(C1O)O)O)O)O)O)O,OCC(C(C(C(COC1OC(CO)C(C(C1O)O)O)O)O)O)O,,True,204,1

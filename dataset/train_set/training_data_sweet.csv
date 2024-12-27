@@ -1,4 +1,4 @@
- Name,Taste,Reference,SMILES,Canonical SMILES,Sweet,Energygap,Label
+Name,Taste,Reference,SMILES,Canonical SMILES,Sweet,Energygap,Label
 Sucrose,Sweet,Rojas et al. (2017),OCC1OC(C(C1O)O)(CO)OC1OC(CO)C(C(C1O)O)O,OCC1OC(C(C1O)O)(CO)OC1OC(CO)C(C(C1O)O)O,TRUE,160,1
 "Sucralose / 4,1',6'-Trichloro-galactosucrose",Sweet,Rojas et al. (2017),ClCC1OC(C(C1O)O)(CCl)OC1OC(CO)C(C(C1O)O)Cl,ClCC1OC(C(C1O)O)(CCl)OC1OC(CO)C(C(C1O)O)Cl,TRUE,194,1
 Aspartame/Aspartyl-phenylalanine methylester,Sweet,Rojas et al. (2017),COC(=O)C(NC(=O)C(CC(=O)O)N)Cc1ccccc1,COC(=O)C(NC(=O)C(CC(=O)O)N)Cc1ccccc1,TRUE,207,1

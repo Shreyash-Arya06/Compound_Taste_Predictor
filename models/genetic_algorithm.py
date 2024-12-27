@@ -2,7 +2,7 @@ import numpy as np
 import random
 import os
 
-# from fitness_calculator import calculateFitness
+from fitness_calculator import calculateFitness
 
 
 class Chromosome:

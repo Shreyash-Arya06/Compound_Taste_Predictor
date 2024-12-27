@@ -1,4 +1,4 @@
- Name,Taste,Reference,SMILES,Canonical SMILES,Bitter,Label
+Name,Taste,Reference,SMILES,Canonical SMILES,Bitter,Label
 Sucrose,Sweet,Rojas et al. (2017),OCC1OC(C(C1O)O)(CO)OC1OC(CO)C(C(C1O)O)O,OCC1OC(C(C1O)O)(CO)OC1OC(CO)C(C(C1O)O)O,FALSE,0
 "Sucralose / 4,1',6'-Trichloro-galactosucrose",Sweet,Rojas et al. (2017),ClCC1OC(C(C1O)O)(CCl)OC1OC(CO)C(C(C1O)O)Cl,ClCC1OC(C(C1O)O)(CCl)OC1OC(CO)C(C(C1O)O)Cl,FALSE,0
 Alitame,Sweet,Rojas et al. (2017),CC(COCNC1C(C)(C)SC1(C)C)NCOCC(CC(=O)O)N,CC(COCNC1C(C)(C)SC1(C)C)NCOCC(CC(=O)O)N,FALSE,0
