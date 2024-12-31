@@ -2,8 +2,16 @@ import pandas as pd
 import os
 
 def main():
-    df_b = pd.read_csv("dataset/extracted_train_set/bitter_data_extracted.csv")
-    df_s = pd.read_csv("dataset/extracted_train_set/sweet_data_extracted.csv")
+    df_b_train = pd.read_csv("dataset/extracted_train_set/bitter_data_extracted.csv")
+    df_s_train = pd.read_csv("dataset/extracted_train_set/sweet_data_extracted.csv")
+    df_b_test = pd.read_csv("dataset/extracted_test_set/bitter_data_extracted.csv")
+    df_s_test = pd.read_csv("dataset/extracted_test_set/sweet_data_extracted.csv")
+
+    col = 'Canonical SMILES'
+    df_b1 = df_b_train[~df_b_train[col].isin(df_b_test[col])]
+    df_b = df_b1[~df_b1[col].isin(df_s_test[col])]
+    df_s1 = df_s_train[~df_s_train[col].isin(df_b_test[col])]
+    df_s = df_s1[~df_s1[col].isin(df_s_test[col])]
     
     group_column = "Taste"
 
