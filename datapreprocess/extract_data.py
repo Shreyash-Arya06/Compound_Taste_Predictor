@@ -15,6 +15,6 @@ def main():
     extractColumns("training_data_bitter.csv", "train_set", "bitter_data_extracted.csv", "extracted_train_set", train_columns)
     extractColumns("training_data_sweet.csv", "train_set", "sweet_data_extracted.csv", "extracted_train_set", train_columns)
     extractColumns("testing_data_bitter.csv", "test_set", "bitter_data_extracted.csv", "extracted_test_set", test_columns)
-    extractColumns("testing_data_bitter.csv", "test_set", "sweet_data_extracted.csv", "extracted_test_set", test_columns)
+    extractColumns("testing_data_sweet.csv", "test_set", "sweet_data_extracted.csv", "extracted_test_set", test_columns)
 
 main()

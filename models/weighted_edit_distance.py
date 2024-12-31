@@ -1,13 +1,14 @@
 # We will create a function to prdict similarity between the compounds.
 class WeightedEditDistance:
-    def __init__(self, seq1, seq2, ins_weight = 1, del_weight = 1, subs_weight = 1):
-        self.seq1 = seq1
-        self.seq2 = seq2
+    def __init__(self, seq1_list, seq2_list, ins_weight = 1, del_weight = 1, subs_weight = 1, mode = 0):
+        self.seq1_list = seq1_list
+        self.seq2_list = seq2_list
         self.ins_weight = ins_weight
         self.del_weight = del_weight
         self.subs_weight = subs_weight
+        self.mode = mode
 
-    def calculateDist(self, m, n):
+    def calculateDist(self, m, n, seq1, seq2):
         grid = [[0 for i in range(m+1)] for j in range(n+1)]        # Initializing the matrix
         
         for i in range(n+1):
@@ -17,7 +18,7 @@ class WeightedEditDistance:
                     grid[i][j] = i * self.del_weight
                 elif (i == 0):
                     grid [i][j] = j * self.ins_weight
-                elif (self.seq1[i-1] == self.seq2[j-1]):
+                elif (seq1[i-1] == seq2[j-1]):
                     grid[i][j] = grid[i-1][j-1]
                 else:
                     grid[i][j] = min(grid[i-1][j-1] + self.subs_weight, grid[i-1][j] + self.del_weight, grid[i][j-1] + self.ins_weight)
@@ -25,13 +26,45 @@ class WeightedEditDistance:
         return grid[n][m]
 
     def getScore(self):
-        m = len(self.seq2)
-        n = len(self.seq1)
-
-        if (abs(m-n) <= 5):        # The code will calculate similarity only when the SMILES' length difference will be atmost 5, because otherwise they are dissimilar.
-            dist = self.calculateDist(m, n)
-            score = 1 - (dist/max(m, n))
+        scores = []
+        final_score = 0
+        if (self.mode == 0):
+            for smiles in self.seq1_list:
+                total = 0
+                count = 0
+                n = len(smiles)
+                for compare_smiles in self.seq2_list:
+                    m = len(compare_smiles)
+                    # The code will calculate similarity only when the SMILES' length difference will be atmost 5, because otherwise they are dissimilar.
+                    if (abs(m-n) <= 5):
+                        dist = self.calculateDist(m, n, smiles, compare_smiles)
+                        cost = 1 - (dist/max(m, n))
+                        total += cost
+                        count += 1
+                score = total/count
+                scores.append(score)
+            
+            for val in scores:
+                final_score += val
+            
+            return (final_score/len(scores))
         else:
-            return None
-        
-        return score
+            smiles = self.seq1_list[0]
+            n = len(smiles)
+            for compare_smiles in self.seq2_list:
+                m = len(compare_smiles)
+                if (abs(m-n) <= 5):
+                    dist = self.calculateDist(m, n, smiles, compare_smiles)
+                    cost = 1 - (dist/max(m, n))
+                    scores.append(cost)
+            
+            if (len(scores) > 5):
+                scores.sort()
+                for i in range(5):
+                    final_score += scores[i]
+                return final_score/5
+            else:
+                for i in scores:
+                    final_score += i
+                return (final_score/len(scores))
+
