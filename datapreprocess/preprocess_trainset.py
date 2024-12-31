@@ -28,7 +28,7 @@ def main():
         combined_group.drop_duplicates(inplace=True)
 
         directory = "dataset/separated_train_set"
-        file_name = f"{group_value}_train_data.csv"
+        file_name = f"{group_value.lower()}_train_data.csv"
         file_path = os.path.join(directory, file_name)
         
         combined_group.to_csv(file_path, index=False)
