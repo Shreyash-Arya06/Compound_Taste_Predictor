@@ -41,8 +41,9 @@ class WeightedEditDistance:
                         cost = 1 - (dist/max(m, n))
                         total += cost
                         count += 1
-                score = total/count
-                scores.append(score)
+                if (count > 0):
+                    score = total/count
+                    scores.append(score)
             
             for val in scores:
                 final_score += val
