@@ -13,4 +13,4 @@ First the calculate_weights.py is executed and it calls the genetic_algorithm.py
 3. The codes of Genetic Algorithm, Wieghted Edit Distance Algorithm are implemented separately. To evaluate the calculated weights, i had written fitness_calculator.py. All the codes are in the folder 'models'. Run calculate_weights.py in the same folder to generate the best weights. The genetic_algorithm.py generates weights and the fitness_calculator.py uses weighted_edit_distance.py to evaluate the generated weights. All the generated wights get mentioned in a text file and the best obtained weight is added separately to another text file.
 4. After obtaining the best weights, it's time to evalute the efficiency of the obtained weights. For the purpose, update the weights in evaluate.py to the best weoghts obtained. After updating the weights, run efficiency_calculator.py to calculate the efficiency of the obtained weights using the test data set.
 
-# The current weights produce 71% efficiency on the tset set.
+# The current weights produce 71% efficiency on the test set.
