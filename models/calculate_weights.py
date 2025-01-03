@@ -10,7 +10,7 @@ def main():
         open_method = 'w' # make a new file if not
 
     file = open(result_path, open_method)
-    file.write('#----------New iteration started.----------#\n')
+    file.write('#----------New iteration started.----------#, fitness without considering cross similarity score.\n')
     file.close()
 
     Genetic_Algo = Genetic(size_of_group = 20, max_generation = 100)

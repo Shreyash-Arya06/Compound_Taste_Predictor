@@ -114,7 +114,7 @@ class Genetic:
             fMax = max(fMax, chromosome.fitness)
 
         print(
-            f'{epoch}/{self.max_generation} Average fitness: {round(fSum / self.size_of_group, 8)}, max fitness: {round(fMax, 8)}')
+            f'{epoch+1}/{self.max_generation} Average fitness: {round(fSum / self.size_of_group, 8)}, max fitness: {round(fMax, 8)}')
     
     def run(self):
         self.initChromosome()

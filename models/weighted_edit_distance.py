@@ -50,7 +50,7 @@ class WeightedEditDistance:
             
             return (final_score/len(scores))
         else:
-            smiles = self.seq1_list[0]
+            smiles = self.seq1_list
             n = len(smiles)
             for compare_smiles in self.seq2_list:
                 m = len(compare_smiles)
@@ -58,14 +58,10 @@ class WeightedEditDistance:
                     dist = self.calculateDist(m, n, smiles, compare_smiles)
                     cost = 1 - (dist/max(m, n))
                     scores.append(cost)
-            
-            if (len(scores) > 5):
-                scores.sort()
-                for i in range(5):
-                    final_score += scores[i]
-                return final_score/5
-            else:
-                for i in scores:
-                    final_score += i
-                return (final_score/len(scores))
 
+            if (len(scores) == 0):
+                return 0
+            else:
+                scores.sort(reverse=True)
+                return scores[0]
+            

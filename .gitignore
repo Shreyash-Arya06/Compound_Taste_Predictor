@@ -6,3 +6,4 @@ dataset/separated_train_set/*
 !dataset/separated_train_set/.gitkeep
 dataset/calculated_weights/*
 !dataset/calculated_weights/.gitkeep
+models/__pycache__
