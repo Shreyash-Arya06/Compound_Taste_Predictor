@@ -5,9 +5,6 @@ def calculateFitness(bitter_smiles, sweet_smiles, tasteless_smiles, ins_weight =
     bitter_bitter = WeightedEditDistance(bitter_smiles, bitter_smiles, ins_weight, del_weight, subs_weight)
     sweet_sweet = WeightedEditDistance(sweet_smiles, sweet_smiles, ins_weight, del_weight, subs_weight)
     tasteless_tasteless = WeightedEditDistance(tasteless_smiles, tasteless_smiles, ins_weight, del_weight, subs_weight)
-    # bitter_sweet = WeightedEditDistance(bitter_smiles, sweet_smiles, ins_weight, del_weight, subs_weight)
-    # sweet_tasteless = WeightedEditDistance(sweet_smiles, tasteless_smiles, ins_weight, del_weight, subs_weight)
-    # tasteless_bitter = WeightedEditDistance(tasteless_smiles, bitter_smiles, ins_weight, del_weight, subs_weight)
 
     cost_bb = bitter_bitter.getScore()
     print('bitter_bitter done!')
@@ -15,12 +12,6 @@ def calculateFitness(bitter_smiles, sweet_smiles, tasteless_smiles, ins_weight =
     print('sweet_sweet done!')
     cost_tt = tasteless_tasteless.getScore()
     print('tasteless_tasteless done!')
-    # cost_bs = bitter_sweet.getScore()
-    # print('bitter_sweet done!')
-    # cost_st = sweet_tasteless.getScore()
-    # print('sweet_tasteless done!')
-    # cost_tb = tasteless_bitter.getScore()
-    # print('tasteless_bitter done!')
 
     total = (cost_bb+cost_ss+cost_tt)
     final_score = total / 3
